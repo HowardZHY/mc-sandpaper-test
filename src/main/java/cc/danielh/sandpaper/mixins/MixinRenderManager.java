@@ -17,6 +17,10 @@ public class MixinRenderManager {
         throw new AbstractMethodError();
     }
 
+    /**
+     * @author Daniel Huang
+     * @reason undefined
+     */
     @Overwrite
     public boolean shouldRender(Entity entityIn, ICamera camera, double camX, double camY, double camZ)
     {

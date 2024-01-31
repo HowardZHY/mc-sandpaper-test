@@ -11,9 +11,9 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ReportedException;
-import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -23,33 +23,42 @@ import java.util.List;
 
 @Mixin(World.class)
 public class MixinEntityUpdate {
+
+    @Final
     @Shadow
     public final Profiler theProfiler = null;
 
+    @Final
     @Shadow
     public final List<Entity> loadedEntityList = Lists.<Entity>newArrayList();
 
+    @Final
     @Shadow
     protected final List<Entity> unloadedEntityList = Lists.<Entity>newArrayList();
 
+    @Final
     @Shadow
     public final List<TileEntity> loadedTileEntityList = Lists.<TileEntity>newArrayList();
 
+    @Final
     @Shadow
     public final List<TileEntity> tickableTileEntities = Lists.<TileEntity>newArrayList();
 
+    @Final
     @Shadow
     private final List<TileEntity> addedTileEntityList = Lists.<TileEntity>newArrayList();
 
+    @Final
     @Shadow
     private final List<TileEntity> tileEntitiesToBeRemoved = Lists.<TileEntity>newArrayList();
 
+    @Final
     @Shadow
     public final List<EntityPlayer> playerEntities = Lists.<EntityPlayer>newArrayList();
 
+    @Final
     @Shadow
     public final List<Entity> weatherEffects = Lists.<Entity>newArrayList();
-
 
     @Shadow
     public void removeEntity(Entity entityIn) {
@@ -76,6 +85,10 @@ public class MixinEntityUpdate {
 
     private static boolean optimizeEntityUpdate = false;
 
+    /**
+     * @author
+     * @reason
+     */
     @Overwrite
     public void updateEntity(Entity ent) {
         if (!optimizeEntityUpdate) {
@@ -108,6 +121,10 @@ public class MixinEntityUpdate {
         throw new AbstractMethodError("Shadow");
     }
 
+    /**
+     * @author
+     * @reason
+     */
     @Overwrite
     public void updateEntities() {
         boolean isProfilerAlreadyEnabled = this.theProfiler.profilingEnabled;
@@ -313,27 +330,20 @@ public class MixinEntityUpdate {
     }
 
     @Shadow
-    private void markBlockForUpdate(BlockPos pos) {
-        throw new AbstractMethodError("Shadow");
+    public void markBlockForUpdate(BlockPos pos) {
     }
 
     @Shadow
-    private Chunk getChunkFromBlockCoords(BlockPos pos) {
-        throw new AbstractMethodError("Shadow");
+    public Chunk getChunkFromBlockCoords(BlockPos pos) {
+        return null;
     }
 
     @Shadow
     public boolean addTileEntity(TileEntity tile) {
-        throw new AbstractMethodError("Shadow");
+        return false;
     }
 
     @Shadow
-    private void removeTileEntity(BlockPos pos) {
-        throw new AbstractMethodError("Shadow");
-    }
-
-    @Shadow
-    public com.google.common.collect.ImmutableSetMultimap<ChunkCoordIntPair, net.minecraftforge.common.ForgeChunkManager.Ticket> getPersistentChunks() {
-        throw new AbstractMethodError("Shadow");
+    public void removeTileEntity(BlockPos pos) {
     }
 }

@@ -3,7 +3,6 @@
     "package": "cc.danielh.sandpaper.mixins",
     "refmap": "mixins.sandpaper.refmap.json",
     "mixins": [
-        "MixinMinecraft",
         "MixinEntityUpdate",
         "MixinRenderManager"
     ],
