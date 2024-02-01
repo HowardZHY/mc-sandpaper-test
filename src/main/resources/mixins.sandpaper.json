@@ -1,9 +1,10 @@
 {
     "compatibilityLevel": "JAVA_8",
+    "priority": 600,
     "package": "cc.danielh.sandpaper.mixins",
     "refmap": "mixins.sandpaper.refmap.json",
     "mixins": [
-        "MixinEntityUpdate",
+        "MixinWorld",
         "MixinRenderManager"
     ],
     "verbose": true

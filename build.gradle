@@ -21,7 +21,7 @@ plugins {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'org.spongepowered.mixin'
 
-group = "me.jellysquid.mods"
+group = "com.example"
 
 compileJava {
     sourceCompatibility = 1.8

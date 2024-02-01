@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.profiler.Profiler;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
@@ -22,11 +21,11 @@ import java.util.Iterator;
 import java.util.List;
 
 @Mixin(World.class)
-public class MixinEntityUpdate {
+public class MixinWorld {
 
     @Final
     @Shadow
-    public final Profiler theProfiler = null;
+    public final Profiler theProfiler = new Profiler();
 
     @Final
     @Shadow
@@ -51,10 +50,6 @@ public class MixinEntityUpdate {
     @Final
     @Shadow
     private final List<TileEntity> tileEntitiesToBeRemoved = Lists.<TileEntity>newArrayList();
-
-    @Final
-    @Shadow
-    public final List<EntityPlayer> playerEntities = Lists.<EntityPlayer>newArrayList();
 
     @Final
     @Shadow
@@ -86,8 +81,8 @@ public class MixinEntityUpdate {
     private static boolean optimizeEntityUpdate = false;
 
     /**
-     * @author
-     * @reason
+     * @author Daniel Huang
+     * @reason undefined
      */
     @Overwrite
     public void updateEntity(Entity ent) {
@@ -122,8 +117,8 @@ public class MixinEntityUpdate {
     }
 
     /**
-     * @author
-     * @reason
+     * @author Daniel Huang
+     * @reason undefined
      */
     @Overwrite
     public void updateEntities() {
@@ -335,7 +330,7 @@ public class MixinEntityUpdate {
 
     @Shadow
     public Chunk getChunkFromBlockCoords(BlockPos pos) {
-        return null;
+        throw new AbstractMethodError("Shadow");
     }
 
     @Shadow
