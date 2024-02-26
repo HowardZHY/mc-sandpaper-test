@@ -2,6 +2,8 @@
 	<img width="400" src="sandpaper.svg">
 </div>
 
+# Don't use it with some other Forge mods it crashes in SinglePlayer with tickEntities
+
 Sandpaper is a free and open-source optimization mod for the Minecraft client that improves frame rates, reduces micro-stutter, and fixes graphical issues in Minecraft.
 
 ![Minecraft rendering graph](graph.png)

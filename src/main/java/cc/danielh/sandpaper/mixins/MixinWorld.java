@@ -123,6 +123,7 @@ public class MixinWorld {
     @Overwrite
     public void updateEntities() {
         boolean isProfilerAlreadyEnabled = this.theProfiler.profilingEnabled;
+
         optimizeEntityUpdate = true;
 
         this.theProfiler.startSection("entities (optimized)");
