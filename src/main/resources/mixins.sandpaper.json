@@ -1,11 +1,13 @@
 {
-    "compatibilityLevel": "JAVA_8",
-    "priority": 600,
-    "package": "cc.danielh.sandpaper.mixins",
-    "refmap": "mixins.sandpaper.refmap.json",
-    "mixins": [
-        "MixinWorld",
-        "MixinRenderManager"
-    ],
-    "verbose": true
+  "compatibilityLevel": "JAVA_8",
+  "priority": 600,
+  "package": "cc.danielh.sandpaper.mixins",
+  "refmap": "mixins.sandpaper.refmap.json",
+  "client": [
+    "MixinEntity",
+    "MixinEntityLivingBase",
+    "MixinRenderManager",
+    "MixinWorld"
+  ],
+  "verbose": true
 }

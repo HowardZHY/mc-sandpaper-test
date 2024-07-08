@@ -2,8 +2,6 @@
 	<img width="400" src="sandpaper.svg">
 </div>
 
-# Don't use it with some other Forge mods it crashes in SinglePlayer with tickEntities
-
 Sandpaper is a free and open-source optimization mod for the Minecraft client that improves frame rates, reduces micro-stutter, and fixes graphical issues in Minecraft.
 
 ![Minecraft rendering graph](graph.png)
@@ -16,7 +14,7 @@ Minecraft runs at a fixed rate of 20 game ticks per second, where entities are u
 
 Sandpaper offloads a significant portion of Minecraft's client-side game ticks to an internal thread pool, which performs the necessary calculations related to entities. Entity updates are parallelized and synchronized by neighboring chunk boundaries, allowing independent behavior to operate simultaneously. This greatly reduces the lag spike caused by the client-side tick duration, resulting in smoother gameplay.
 
-Sandpaper is compatible with renderer optimization mods, including [OptiFine](https://optifine.net/home) and [Sodium](https://modrinth.com/mod/sodium). While Sandpaper is focused on the client tick, OptiFine and Sodium both optimize the OpenGL renderer itself. It is recommended to use both sets of optimizations together for the best possible performance.
+Sandpaper is compatible with renderer optimization mods, including [OptiFine](https://optifine.net/home). While Sandpaper is focused on the client tick, OptiFine and Sodium both optimize the OpenGL renderer itself. It is recommended to use both sets of optimizations together for the best possible performance.
 
 ## Building from source
 

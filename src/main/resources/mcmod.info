@@ -5,7 +5,7 @@
         "description": "Minecraft renderer sandpaper optimization",
         "version": "${version}",
         "mcversion": "${mcversion}",
-        "url": "https://github.com/danielhuang/mc-sandpaper",
+        "url": "https://github.com/HowardZHY/mc-sandpaper",
         "updateUrl": "",
         "authorList": [
             "DH"
